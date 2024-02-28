@@ -9,5 +9,6 @@ def get_predict(Age , Sex, BP, Cholesterol, Na_to_K):
     test_array = np.array([[Age , Sex, BP, Cholesterol, Na_to_K]])
 
     predicted_drug = model.predict(test_array)
+    print("change for git")
 
     return predicted_drug
