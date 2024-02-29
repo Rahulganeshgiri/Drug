@@ -23,10 +23,11 @@ def predict():
     Na_to_K = float(data['Na_to_K'])
 
     predicted_drug = get_predict(Age , Sex, BP, Cholesterol, Na_to_K)
+    predicted_drug = predicted_drug[0]
 
     print(f"Predicted Drug is {predicted_drug}")
 
-    return render_template('index.html', predicted_drug=f"{predicted_drug}")
+    return render_template('index.html', predicted_drug= predicted_drug)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, debug=False)
