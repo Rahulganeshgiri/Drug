@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, jsonify, url_for
 import pickle
 from utils import get_predict
+import os
 
 app = Flask(__name__)
 
@@ -30,4 +31,5 @@ def predict():
     return render_template('index.html', predicted_drug= predicted_drug)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080, debug=False)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
